@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0;padding:0;">
+<title>Nanaimo Orthos</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+</head>
+<body style="height:100%;margin:0;padding:0;">
+<div id="map" style="height:100%"></div>
+<script>
+//<![CDATA[
+var tile_url = "http://{s}.tile.paulnorman.ca/{layerId}/{z}/{x}/{y}.png";
+var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution: "Base layer © <a href='http://www.openstreetmap.org/'>OpenStreetMap</a> contributors, data licensed <a href='http://opendatacommons.org/licenses/odbl/1.0/'>ODbL</a>, tiles <a href='http://creativecommons.org/licenses/by-sa/2.0/legalcode'>CC BY-SA</a>"});
+var kelowna_overlay = L.tileLayer(tile_url, {layerId:"kelowna_overlay",attribution:"© 2013 City of Kelowna"});
+var nanaimo2012 = L.tileLayer(tile_url,{layerId:"nanaimo2012", maxZoom: 20, attribution: "© 2012 City of Nanaimo"});
+var map = L.map('map',{attributionControl: false, center: [49.16,-123.93], zoom: 14, layers: [nanaimo2012]});
+
+var baseLayers = { "OpenStreetMap": osm, "City of Nanaimo 2012 Imagery": kelowna2012};
+var overlays = { "City of Kelowna Roads": kelowna_overlay};
+L.control.layers(baseLayers, false).addTo(map);
+L.control.attribution({prefix: false}).addTo(map);
+//]]>
+</script>
+</body>
+</html>

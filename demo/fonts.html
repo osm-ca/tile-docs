@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0;padding:0;">
+<title>openstreetmap-carto fonts demo</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+<script type="text/javascript" src="http://mlevans.github.io/leaflet-hash/javascripts/leaflet-hash.js"></script>
+</head>
+<body style="height:100%;margin:0;padding:0;">
+<div id="map" style="height:100%"></div>
+<script>
+//<![CDATA[
+var tile_url = "http://{s}.tile.paulnorman.ca/{layerId}/{z}/{x}/{y}.png";
+var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution: "© <a href='http://www.openstreetmap.org/'>OpenStreetMap</a> contributors, data licensed <a href='http://opendatacommons.org/licenses/odbl/1.0/'>ODbL</a>, tiles <a href='http://creativecommons.org/licenses/by-sa/2.0/legalcode'>CC BY-SA</a>"});
+var font_nouni = L.tileLayer(tile_url, {layerId:"font_nouni",attribution:"© <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>, data ODbL, tiles CC BY 4.0"});
+var font_droid = L.tileLayer(tile_url,{layerId:"font_droid", attribution: "© <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>, data ODbL, tiles CC BY 4.0"});
+var font_arundina = L.tileLayer(tile_url,{layerId:"font_arundina", attribution: "© <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>, data ODbL, tiles CC BY 4.0"});
+
+var map = L.map('map',{attributionControl: false, center: [35,90], zoom: 4, layers: [osm]});
+
+var baseLayers = { "OpenStreetMap": osm, "No Unifont fallback": font_nouni, "Droid Fallback": font_droid, "Arundina Sans": font_arundina};
+L.control.layers(baseLayers).addTo(map);
+L.control.attribution({prefix: false}).addTo(map);
+var hash = new L.Hash(map);
+//]]>
+</script>
+</body>
+</html>
