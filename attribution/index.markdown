@@ -7,6 +7,8 @@
 
 This page provides the necessary attribution for layers served from this server
 
+## British Columbia Imagery
+
 ## Landsat
 
 Landsat data is public domain.
@@ -16,6 +18,14 @@ Landsat data is public domain.
 Surrey 2013 contains information from the City of Surrey licensed the [Open Government License – City of Surrey](Open_Government_License_-_City_of_Surrey_v1.pdf).
 
 Surrey 2010 contains imagery from the City of Surrey licensed under the Public Domain Dedication and License.
+
+## Langley
+
+Langley 2014 contains imagery from the City of Langley licensed under the Public Domain Dedication and License.
+
+## Vancouver
+
+Vancouver 2012 contains information from the City of Vancouver licensed under the [Open Government Licence – Vancouver](vancouver_10)
 
 ## Nanaimo
 
